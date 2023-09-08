@@ -1,0 +1,82 @@
+body{
+  background-image: linear-gradient( 111.4deg, #3B3561, rgba(27,24,113,1) 93.2% );
+}
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-brand img {
+  width: 100px;
+  height: 10W0px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin: 0.2rem;
+}
+
+.nav-link:hover {
+  /*background-color: rgba(255, 255, 255, 0.1);*/
+
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,
+   rgba(237,3,32,0.87) 20.8%, rgba(242,121,1,0.84) 74.4% );
+  cursor: pointer;
+}
+.form-control {
+  width: 250px; /* Ancho del campo de búsqueda */
+  margin-right: 10px; /* Espacio entre el campo de búsqueda y el botón */
+}
+
+
+.navbar{
+  position: fixed; /* Fija la barra de navegación en la parte superior */
+  top: 0; /* Coloca la barra en la parte superior de la ventana del navegador */
+  left: 0;
+  right: 0;
+}
+.ico{
+    margin: 5px; /* Adjust the margin as needed */
+
+  width: 200;
+  height: 100;
+}
+section {
+  display: flex;
+  position: relative;
+  min-height: 700px;
+}
+section img { width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: .5s ease;}
+  section img:hover {
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+  }
+
+  gradient{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+  }
+
+  @media (max-width: 480px) {
+    .header-14-sub {min-height: 300px;}
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+    .header-14-sub {min-height: 500px;}
+    }
+
+    @media (min-width: 768px) and (max-width: 979px) {
+    .header-14-sub { min-height: 700px;}
+    }
+
+    @media (min-width: 1200px) {
+    .header-14-sub {min-height: 1200px;}
+    }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+</head>
+<body>
+
+    <div class="table-box">
+  <div class="reload-button-container">
+    <button mat-raised-button class="reload-button" (click)="recargarPagina()">
+      <mat-icon class="reload-icon">refresh</mat-icon>
+      Recargar Página
+    </button>
+    </div>
+
+        <div class="table-row table-head">
+            <div class="table-cell">
+                <p>Id</p>
+            </div>
+            <div class="table-cell">
+                <p>CodigoFactura</p>
+            </div>
+            <div class="table-cell">
+                <p>Cliente</p>
+            </div>
+            <div class="table-cell">
+                <p>TotalFactura</p>
+            </div>
+            <div class="table-cell">
+                <p>FechaCreacion</p>
+            </div>
+            <div class="table-cell">
+                <p>Estado</p>
+            </div>
+            <div class="table-cell">
+                <p>Pagada</p>
+            </div>
+            <div class="table-cell">
+                <p>FechaPago</p>
+            </div>
+            <div class="table-cell">
+                <p>Acción</p>
+            </div>
+        </div>
+
+        <!-- Assuming this is an Angular template -->
+
+  <!-- Display paginated invoices -->
+  <div class="table-row" *ngFor="let factura of facturasPaginadas">
+    <div class="table-cell">
+      <p>{{ factura.id }}</p>
+    </div>
+    <div class="table-cell">
+      <p>{{ factura.codigoFactura }}</p>
+    </div>
+    <div class="table-cell">
+      <p>{{ factura.cliente }}</p>
+    </div>
+    <div class="table-cell">
+      <p>{{ factura.totalFactura }}</p>
+    </div>
+    <div class="table-cell">
+      <p>{{ factura.fechaCreacion | date:'yyyy-MM-dd' }}</p>
+    </div>
+    <div class="table-cell">
+      <p>{{ factura.estado }}</p>
+    </div>
+    <div class="table-cell">
+      <input type="checkbox" [(ngModel)]="factura.pagada" (change)="actualizarFactura(factura.id, factura.pagada)">
+    </div>
+    <div class="table-cell">
+      <p>{{ factura.fechaPago | date:'yyyy-MM-dd' }}</p>
+    </div>
+    <div class="table-cell">
+      <button mat-fab color="warn" (click)="deleteFacturaById(factura.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button mat-fab color="primary" (click)="showConfirmationDialog(factura.id)">
+        <mat-icon>bookmark</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Pagination controls -->
+  <div class="pagination">
+    <button mat-raised-button color="primary" (click)="cambiarPagina(paginaActual - 1)" [disabled]="paginaActual === 1">Anterior</button>
+    <span>{{ paginaActual }}</span>
+    <button mat-raised-button color="primary" (click)="cambiarPagina(paginaActual + 1)" [disabled]="paginaActual === calcularPaginaMaxima()">Siguiente</button>
+  </div>
+</div>
+</body>
+</html>

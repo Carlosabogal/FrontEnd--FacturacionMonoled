@@ -1,0 +1,189 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.table-row {
+  transition: background-color 0.3s, color 0.3s; /* Animación suave de cambio de color */
+}
+
+.table-row:hover {
+  background-color: #ffff99; /* Color de fondo al hacer hover */
+  color: purple; /* Color del texto al hacer hover */
+}
+
+
+.button:active {
+  background: var(--background-hover); /* Cambia el color de fondo cuando se presiona */
+  color: var(--text); /* Mantén el color del texto */
+}
+
+.table-box {
+  margin: 50px auto;
+  transform: translateY(8cm);
+  flex: 1 0 120px;
+  width: 80%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.table-row{
+  display: table;
+  width: 80%;
+  margin: 10px auto;
+  font-family: sans-serif;
+  background: transparent;
+  padding: 12px 0;
+  color: #555;
+  font-size: 13px;
+  box-shadow: 0 1px 4px 0px rgba(0,0,50,0.3);
+}
+.table-head{
+  background: #8665f7;
+  box-shadow: none;
+  color: #fff;
+  font-weight: 600;
+}
+.table-head .table-cell{
+  border-right: none;
+}
+.table-cell{
+  display: table-cell;
+  width: 5%;
+  text-align: center;
+  padding: 4px 0;
+  border-right: 1px solid #d6d4d4;
+  vertical-align: middle;
+}
+.first-cell{
+  text-align: left;
+  padding-left: 10px;
+}
+.last-cell{
+  border-right: none;
+}
+a{
+  text-decoration: none;
+  color: #555;
+}
+.action-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.table-box {
+  border-collapse: collapse;
+  width: 80%; /* Adjust the width as needed */
+  background-color: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-head {
+  font-weight: bold;
+  background-color: #333;
+  color: #fff;
+}
+
+.table-cell {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.action-button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Estilo para los botones de paginación */
+button {
+  margin: 0 5px;
+}
+
+/* Estilo para el botón "Anterior" */
+button:first-child {
+  margin-left: 0;
+}
+
+/* Estilo para el botón "Siguiente" */
+button:last-child {
+  margin-right: 0;
+}
+
+/* Estilo para el número de página actual */
+span {
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+/* Estilo para los botones de Material Angular */
+.mat-raised-button {
+  background-color: #007bff; /* Color de fondo predeterminado de Material Angular */
+  color: #fff; /* Color de texto predeterminado de Material Angular */
+  min-width: 36px;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.reload-button-container {
+  text-align: center;
+  margin: 20px 0;
+  color:4caf50;
+}
+.reload-button {
+  background-color: #4caf50; /* Color verde, puedes cambiarlo según tus preferencias */
+  color: #4caf50; /* Color de texto del botón de recarga */
+}
+
+/* Estilo para el ícono dentro del botón de recarga */
+.reload-icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+/* Estilo para los botones deshabilitados */
+.mat-raised-button[disabled] {
+  background-color: #ccc; /* Color de fondo para botones deshabilitados */
+  cursor: not-allowed;
+}
+
+/* Estilo de hover para los botones */
+.mat-raised-button:not([disabled]):hover {
+  background-color: #0056b3; /* Color de fondo al pasar el ratón sobre el botón */
+}
+.action-button.delete {
+  background-color: #dc3545;
+}
+@media only screen and (max-width: 600px) {
+.table-row {
+  font-size: 11px;
+}
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Factura</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+    <script>
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+</head>
+<body>
+  <div class="container">
+    <form (ngSubmit)="crearFactura()" #form="ngForm">
+      <div class="text-center my-4">
+        <h1>Crear Factura</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="Id">ID</label>
+          <input type="text" class="form-control" id="Id" name="Id" [(ngModel)]="nuevaFactura.id" placeholder="ID" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="CodigoFactura">Código de Factura</label>
+          <input type="text" class="form-control" id="CodigoFactura" name="CodigoFactura" [(ngModel)]="nuevaFactura.codigoFactura" placeholder="Código de Factura" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="Cliente">Cliente</label>
+          <input type="text" class="form-control" id="Cliente" name="Cliente" [(ngModel)]="nuevaFactura.cliente" placeholder="Ingrese el nombre del cliente" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="Desarrollo">Desarrollo</label>
+          <input type="text" class="form-control" id="Desarrollo" name="Desarrollo" [(ngModel)]="nuevaFactura.desarrollo" placeholder="Desarrollo" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="NumeroBogota" class="col-form-label">Número Bogotá</label>
+          <input type="text" id="NumeroBogota" class="form-control" name="NumeroBogota" [(ngModel)]="nuevaFactura.numeroBogota" placeholder="Número Bogotá" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="CorreoElectronico" class="col-form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="CorreoElectronico" name="CorreoElectronico" [(ngModel)]="nuevaFactura.correoElectronico" placeholder="Correo Electrónico" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="Ciudad">Ciudad</label>
+          <input type="text" class="form-control" id="Ciudad" name="Ciudad" [(ngModel)]="nuevaFactura.ciudad" placeholder="Ciudad" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="NIT">NIT</label>
+          <input type="text" class="form-control" id="NIT" name="NIT" [(ngModel)]="nuevaFactura.nit" placeholder="NIT" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="SubTotal">Subtotal</label>
+          <input type="number" class="form-control" id="SubTotal" name="SubTotal" [(ngModel)]="nuevaFactura.subTotal" placeholder="Subtotal" required>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="Iva">IVA</label>
+          <input type="number" class="form-control" id="Iva" name="Iva" [(ngModel)]="nuevaFactura.iva" placeholder="IVA" required>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="Retencion">Retención</label>
+        <input type="text" class="form-control" id="Retencion" name="Retencion" [(ngModel)]="nuevaFactura.retencion" placeholder="Retención" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="RetencionValor">Valor de la Retención</label>
+        <input type="number" class="form-control" id="RetencionValor" name="RetencionValor" [(ngModel)]="nuevaFactura.retencionValor" placeholder="Valor de la Retención" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="FechaCreacion">Fecha de Creación</label>
+        <input type="date" class="form-control" id="FechaCreacion" name="FechaCreacion" [(ngModel)]="nuevaFactura.fechaCreacion" required>
+      </div>
+
+      <div class="custom-control custom-checkbox mb-3">
+        <input type="checkbox" class="custom-control-input" id="Pagada" name="Pagada" [(ngModel)]="nuevaFactura.pagada">
+        <label class="custom-control-label" for="Pagada"> Pago</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="showModal()">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
